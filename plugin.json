@@ -1,0 +1,15 @@
+{
+    "id": "mp4file",
+    "name": "MP4 File",
+    "description": "Mattermost web app plugin to have a native HTML5 video player for .mp4 urls",
+    "homepage_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file",
+    "support_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file/issues",
+    "release_notes_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file/releases/tag/1.0.0",
+    "version": "1.0.0",
+    "webapp": {
+        "bundle_path": "main.js"
+    },
+    "props": {
+        "maxHeight": 350
+    }
+}
