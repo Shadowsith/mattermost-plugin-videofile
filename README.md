@@ -1,4 +1,4 @@
-## mattermost-plugin-mp4file
+## mattermost-plugin-videofile
 Mattermost web app plugin to have a in chat native HTML5 video player for .mp4 file
 
 ### Build:

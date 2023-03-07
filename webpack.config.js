@@ -2,11 +2,11 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        './src/index.jsx',
+        './client/index.jsx',
     ],
     resolve: {
         modules: [
-            'src',
+            'client',
             'node_modules',
         ],
         extensions: ['*', '.js', '.jsx'],

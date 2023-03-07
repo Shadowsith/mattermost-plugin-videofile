@@ -1,13 +1,83 @@
 {
-    "id": "mp4file",
-    "name": "MP4 File",
+    "id": "videofile",
+    "name": "Video File",
     "description": "Mattermost web app plugin to have a native HTML5 video player for .mp4 urls",
-    "homepage_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file",
-    "support_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file/issues",
-    "release_notes_url": "https://github.com/Shadowsith/mattermost-plugin-mp4file/releases/tag/1.0.0",
-    "version": "1.0.0",
+    "homepage_url": "https://github.com/Shadowsith/mattermost-plugin-videofile",
+    "support_url": "https://github.com/Shadowsith/mattermost-plugin-videofile/issues",
+    "release_notes_url": "https://github.com/Shadowsith/mattermost-plugin-videofile/releases/tag/1.1.0",
+    "version": "1.1.0",
+    "min_server_version": "6.2.1",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/plugin-linux-amd64",
+            "darwin-amd64": "server/plugin-darwin-amd64",
+            "windows-amd64": "server/plugin-windows-amd64.exe"
+        }
+    },
     "webapp": {
-        "bundle_path": "main.js"
+        "bundle_path": "client/main.js"
+    },
+    "settings_schema": {
+        "header": "Video File settings",
+        "footer": "Please report problems with the plugin at: https://github.com/Shadowsith/mattermost-plugin-videourl/issues",
+        "settings": [
+            {
+                "key": "maxheight",
+                "display_name": "Video max height",
+                "type": "number",
+                "help_text": "Set max height of image or video element in chat",
+                "default": "350"
+            },
+            {
+                "key": "rendertimeout",
+                "display_name": "Render timeout",
+                "type": "number",
+                "help_text": "Set video render timeout in milliseconds (after file post is loaded by mattermost chat)",
+                "default": "20"
+            },
+            {
+                "key": "mp4",
+                "display_name": "Support MP4",
+                "type": "bool",
+                "help_text": "Support *.mp4 file urls",
+                "default": "true"
+            },
+            {
+                "key": "webm",
+                "display_name": "Support WEBM",
+                "type": "bool",
+                "help_text": "Support *.webm file urls.",
+                "default": "true"
+            },
+            {
+                "key": "mov",
+                "display_name": "Support MOV",
+                "type": "bool",
+                "help_text": "Support *.mov file urls. It is maybe not supported by your browser.",
+                "default": "true"
+            },
+            {
+                "key": "avi",
+                "display_name": "Support AVI",
+                "type": "bool",
+                "help_text": "Support *.avi file urls. It is maybe not supported by your browser.",
+                "default": "true"
+            },
+            {
+                "key": "wmv",
+                "display_name": "Support WMV",
+                "type": "bool",
+                "help_text": "Support *.wmv file urls. It is maybe not supported by your browser.",
+                "default": "true"
+            },
+            {
+                "key": "ogv",
+                "display_name": "Support OGV",
+                "type": "bool",
+                "help_text": "Support *.ogv file urls",
+                "default": "true"
+            }
+        ]
     },
     "props": {
         "maxHeight": 350

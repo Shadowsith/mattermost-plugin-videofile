@@ -1,4 +1,5 @@
 /dist
 /node_modules
 /mattermost-mp4file-plugin
+/mattermost-videofile-plugin
 *.tar.gz
