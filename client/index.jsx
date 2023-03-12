@@ -36,6 +36,17 @@ class PluginSettings {
          * @type {boolean}
          */
         this.ogv = data.ogv == null ? true : data.ogv;
+        /**
+         * @type {string[]}
+         */
+        this.supportedFileTypes = [
+            'mp4',
+            'webm',
+            'mov',
+            'avi',
+            'wmv',
+            'ogv'
+        ];
     }
 }
 
@@ -164,14 +175,12 @@ class PostMessageAttachmentComponent extends React.Component {
                     return 'video/ogv';
 
                 case 'mp4':
-                default:
                     return 'video/mp4';
             }
         } catch {
             return 'video/mp4';
         }
     }
-
 
     /**
      * @returns void
@@ -186,14 +195,13 @@ class PostMessageAttachmentComponent extends React.Component {
                 return;
             }
             this.fileType = this.getFileType();
-            if (this.fileType == 'mp4' && !this.settings.mp4
-                || this.fileType == 'webm' && !this.settings.webm
-                || this.fileType == 'mov' && !this.settings.mov
-                || this.fileType == 'avi' && !this.settings.avi
-                || this.fileType == 'wmv' && !this.settings.wmv
-                || this.fileType == 'ogv' && !this.settings.ogv
-            ) {
+            if (!this.settings.supportedFileTypes.includes(this.fileType)) {
                 return;
+            }
+            for (const ft of this.settings.supportedFileTypes) {
+                if (this.fileType == ft && !this.settings[ft]) {
+                    return;
+                }
             }
             if (this.isRendered()) {
                 return;
@@ -206,6 +214,7 @@ class PostMessageAttachmentComponent extends React.Component {
     }
 
 }
+
 
 class VideoFilePlugin {
     static apiUrl = '/plugins/videofile';
